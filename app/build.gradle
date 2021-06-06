@@ -1,6 +1,10 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'androidx.navigation.safeargs.kotlin'
+    id 'kotlin-parcelize'
+    id 'dagger.hilt.android.plugin'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -9,7 +13,7 @@ android {
 
     defaultConfig {
         applicationId "com.thinksurfmedia"
-        minSdkVersion 16
+        minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -32,14 +36,78 @@ android {
     }
 }
 
+ext{
+    retrofit_version = "2.9.0"
+    room_version = "2.3.0"
+    hilt_viewmodels = "1.0.0-alpha01"
+    navigation_version = "2.3.5"
+    lifecycle_version = "2.3.1"
+    coroutines_version = "1.4.3"
+    lottie_version = "3.4.0"
+    glide_version = "4.12.0"
+}
+
 dependencies {
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.core:core-ktx:1.5.0'
+
+    // UI
     implementation 'androidx.appcompat:appcompat:1.3.0'
     implementation 'com.google.android.material:material:1.3.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    testImplementation 'junit:junit:4.+'
+    implementation 'androidx.vectordrawable:vectordrawable:1.1.0'
+
+    // Glide Image Loader
+    implementation "com.github.bumptech.glide:glide:$glide_version"
+    annotationProcessor "com.github.bumptech.glide:compiler:$glide_version"
+
+    // Lottie Animation View
+    implementation "com.airbnb.android:lottie:$lottie_version"
+
+    // Recyclerview Indicator
+    implementation 'me.relex:circleindicator:2.1.6'
+
+    // Country Code Picker
+    implementation 'com.hbb20:ccp:2.4.7'
+
+    // Payments
+    implementation 'com.stripe:stripe-android:16.7.1' // stripe
+    implementation 'com.braintreepayments.api:braintree:3.15.0' // braintree
+    implementation 'com.braintreepayments.api:drop-in:5.2.1' // braintree
+    implementation 'com.braintreepayments.api:google-payment:3.5.0' // braintree
+    implementation 'com.google.android.gms:play-services-wallet:18.1.3' // google pay
+
+    // Retrofit + GSON
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+
+    // Coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
+
+    // Room
+    implementation "androidx.room:room-runtime:$room_version"
+    implementation "androidx.room:room-ktx:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+
+    // Lifecycle
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+
+    // Navigation Component
+    implementation "androidx.navigation:navigation-fragment-ktx:$navigation_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$navigation_version"
+
+    // Dagger-Hilt
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
+    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hilt_viewmodels"
+    kapt "androidx.hilt:hilt-compiler:$hilt_viewmodels"
+
+    // Testing
+    testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 }
