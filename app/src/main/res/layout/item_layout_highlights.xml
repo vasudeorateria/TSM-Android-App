@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    android:animateLayoutChanges="true"
+    android:background="@color/dark_blue">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/serviceAnimation"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="12dp"
+        android:visibility="gone"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true" />
+
+    <ImageView
+        android:id="@+id/leftImage"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_below="@id/serviceAnimation"
+        android:layout_alignParentStart="true"
+        android:src="@mipmap/ic_launcher" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/serviceAnimation"
+        android:layout_marginHorizontal="8dp"
+        android:layout_toStartOf="@id/rightImage"
+        android:layout_toEndOf="@id/leftImage"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/highlightName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:textAlignment="gravity"
+            android:textColor="@color/yellow"
+            android:textSize="24sp"
+            tools:text="Responsive Design" />
+
+        <TextView
+            android:id="@+id/highlightDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="start"
+            android:textAlignment="gravity"
+            android:textColor="@color/yellow"
+            android:textSize="18sp"
+            tools:text="Responsive Design" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/rightImage"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_below="@id/serviceAnimation"
+        android:layout_alignParentEnd="true"
+        android:src="@mipmap/ic_launcher" />
+
+</RelativeLayout>

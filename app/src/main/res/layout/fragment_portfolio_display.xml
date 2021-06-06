@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:animateLayoutChanges="true"
+    android:background="@color/dark_blue"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/portfolio_images_rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        tools:itemCount="1"
+        tools:listitem="@layout/item_layout_image" />
+
+    <me.relex.circleindicator.CircleIndicator2
+        android:id="@+id/dot_indicator"
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        app:ci_drawable="@drawable/scrollbar_thumb"
+        app:ci_drawable_unselected="@drawable/scrollbar_track"
+        app:ci_height="8dp"
+        app:ci_width="8dp" />
+
+</LinearLayout>

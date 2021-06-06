@@ -1,3 +1,28 @@
 <resources>
-    <string name="app_name">TSM</string>
+    <string name="app_name">Think Surf Media</string>
+    <string name="title_home">Home</string>
+    <string name="title_services">Services</string>
+    <string name="title_contact_us">Contact Us</string>
+    <string name="title_activity_splash">SplashActivity</string>
+
+
+    <string name="min_3_character">Please enter at least 3 characters</string>
+    <string name="min_10_character">Please enter at least 10 characters</string>
+    <string name="valid_email">Please enter a valid email address</string>
+    <string name="valid_phone">Please enter a valid phone number</string>
+
+
+    <string name="processing">Processing</string>
+    <string name="formSubmit_success">Successfully submitted the form. We will get in touch with you soon</string>
+    <string name="formSubmit_failed">An unexpected error occurred. Please try again in a while.</string>
+
+    <string name="payment_success">Successfully submitted the form. We will get in touch with you soon</string>
+    <string name="payment_failed">An unexpected error occurred. Please try again in a while.</string>
+
+    <!--    <string name="valid_phone">Please enter a valid phone number</string>-->
+    <!--    <string name="valid_phone">Please enter a valid phone number</string>-->
+    <!--    <string name="valid_phone">Please enter a valid phone number</string>-->
+    <!--    <string name="valid_phone">Please enter a valid phone number</string>-->
+    <!--    <string name="valid_phone">Please enter a valid phone number</string>-->
+
 </resources>

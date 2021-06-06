@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_blue"
+    tools:context=".ui.services.serviceDetails.ServiceDetailsFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/highlights_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"
+            tools:itemCount="3"
+            tools:listitem="@layout/item_layout_highlights" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/yellow"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/dark_blue"
+                android:gravity="center_vertical"
+                android:paddingLeft="16dp"
+                android:text="Pricing"
+                android:textAlignment="gravity"
+                android:textColor="@color/white"
+                android:textSize="32sp" />
+
+            <Spinner
+                android:id="@+id/currency_list"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:dropDownSelector="@color/dark_blue"
+                android:gravity="center"
+                android:padding="8dp"
+                android:textAlignment="gravity"
+                tools:listitem="@android:layout/simple_list_item_1" />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/plans_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:nestedScrollingEnabled="false"
+            tools:itemCount="1"
+            tools:listitem="@layout/item_layout_plan_details" />
+
+        <me.relex.circleindicator.CircleIndicator2
+            android:id="@+id/dot_indicator"
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:layoutDirection="rtl"
+            app:ci_drawable="@drawable/scrollbar_thumb"
+            app:ci_drawable_unselected="@drawable/scrollbar_track"
+            app:ci_height="10dp"
+            app:ci_width="10dp" />
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

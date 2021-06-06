@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.thinksurfmedia.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_navigation_home_to_addToDoFragment"
+            app:destination="@id/portfolioDisplay" />
+        <action
+            android:id="@+id/action_navigation_home_to_paymentFragment"
+            app:destination="@id/paymentFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/services"
+        android:name="com.thinksurfmedia.ui.services.OurServicesFragment"
+        android:label="@string/title_services"
+        tools:layout="@layout/fragment_services">
+        <action
+            android:id="@+id/action_services_to_serviceDetailsFragment"
+            app:destination="@id/serviceDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/contact_us"
+        android:name="com.thinksurfmedia.ui.contactus.ContactUsFragment"
+        android:label="@string/title_contact_us"
+        tools:layout="@layout/fragment_contact_us" />
+    <fragment
+        android:id="@+id/serviceDetailsFragment"
+        android:name="com.thinksurfmedia.ui.services.serviceDetails.ServiceDetailsFragment"
+        android:label="{serviceName}"
+        tools:layout="@layout/fragment_service_details">
+        <argument
+            android:name="serviceName"
+            app:argType="string" />
+        <argument
+            android:name="serviceId"
+            app:argType="integer" />
+    </fragment>
+
+    <dialog
+        android:id="@+id/portfolioDisplay"
+        android:name="com.thinksurfmedia.ui.home.PortfolioDisplay"
+        android:label="portfolioDisplay"
+        tools:layout="@layout/fragment_portfolio_display">
+        <argument
+            android:name="portfolio"
+            app:argType="com.thinksurfmedia.model.Portfolio" />
+    </dialog>
+    <fragment
+        android:id="@+id/paymentFragment"
+        android:name="com.thinksurfmedia.ui.payments.PaymentFragment"
+        android:label="Payments"
+        tools:layout="@layout/fragment_payment" />
+
+</navigation>

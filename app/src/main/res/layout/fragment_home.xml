@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_blue"
+    tools:context=".ui.home.HomeFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/serviceAnimation"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:focusableInTouchMode="true"
+            app:lottie_autoPlay="true"
+            app:lottie_cacheComposition="true"
+            app:lottie_loop="true"
+            app:lottie_url="https://thinksurfmedia.herokuapp.com/lottie-files/home-page.json" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Let's create waves of change, \n together\n \nFrom fostering product innovation to delivering impactful customer experiences, we focus on making your work experiences better with us."
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/getStarted"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="16dp"
+            android:backgroundTint="@color/yellow"
+            android:text="Let's Start"
+            android:textAllCaps="false"
+            android:textColor="@color/dark_blue" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginVertical="8dp"
+            android:text="Portfolio"
+            android:textColor="@color/white"
+            android:textSize="24sp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/portfolio_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"
+            tools:itemCount="1"
+            tools:layout_height="50dp"
+            tools:listitem="@layout/item_layout_image" />
+
+        <!--        <TextView-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_gravity="center"-->
+        <!--            android:layout_marginVertical="8dp"-->
+        <!--            android:text="Our Clients"-->
+        <!--            android:textColor="@color/white"-->
+        <!--            android:textSize="24sp" />-->
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/client_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"
+            tools:itemCount="1"
+            tools:layout_height="50dp"
+            tools:listitem="@layout/item_layout_image" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="@color/yellow"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="16dp"
+                android:text="Like Our Work? Lets Start Together"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/contact_us"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="8dp"
+                android:text="Contact Us"
+                android:textAllCaps="false"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/reviews_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="8dp"
+            tools:itemCount="1"
+            tools:listitem="@layout/item_layout_review" />
+
+        <me.relex.circleindicator.CircleIndicator2
+            android:id="@+id/dot_indicator"
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            app:ci_drawable="@drawable/scrollbar_thumb"
+            app:ci_drawable_unselected="@drawable/scrollbar_track"
+            app:ci_height="12dp"
+            app:ci_width="12dp" />
+
+        <TextView
+            android:id="@+id/payments"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginVertical="8dp"
+            android:drawableRight="@drawable/right_arrow"
+            android:text="Payments"
+            android:textColor="@color/white"
+            android:textSize="32sp" />
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
